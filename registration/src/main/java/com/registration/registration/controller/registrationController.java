@@ -16,7 +16,7 @@ public class registrationController {
     @Autowired
     private UserService service;
     
-    @CrossOrigin(origins = "http://localhost:3000")
+    /*@CrossOrigin(origins = "http://localhost:3000") */
     @PostMapping("/register")
     public AllStateUser registration(@RequestBody AllStateUser user) throws Exception {
         String tempEmailId = user.getEmailId();
@@ -36,13 +36,13 @@ public class registrationController {
 
     }
     
-    @CrossOrigin(origins = "http://localhost:3000")
+   /* @CrossOrigin(origins = "http://localhost:3000")*/
     @GetMapping("/userbyemailid")
     public AllStateUser getUser(@RequestParam String emailId){
         return  service.fetchUserByEmailId(emailId);
     }
     
-    @CrossOrigin(origins = "http://localhost:3000")
+   /* @CrossOrigin(origins = "http://localhost:3000")*/
     @GetMapping("/userslist")
     public List<AllStateUser> getAllUser(){
         return service.getAllUser();
